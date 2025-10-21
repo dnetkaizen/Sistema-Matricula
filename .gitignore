@@ -1,0 +1,185 @@
+# ===========================
+# Sistema de Matrícula - .gitignore
+# ===========================
+
+# ===========================
+# Backend (Java/Maven/Spring Boot)
+# ===========================
+backend/target/
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+backend/.idea/
+backend/*.iml
+backend/*.iws
+backend/*.ipr
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/bin/
+backend/build/
+backend/out/
+
+# Spring Boot
+backend/spring-boot-*.log
+backend/*.log
+
+# ===========================
+# Frontend (React/Vite/Node)
+# ===========================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/.cache/
+frontend/.parcel-cache/
+frontend/.next/
+frontend/out/
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+
+# Editor directories and files
+frontend/.vscode/*
+!frontend/.vscode/extensions.json
+frontend/.idea
+frontend/.DS_Store
+frontend/*.suo
+frontend/*.ntvs*
+frontend/*.njsproj
+frontend/*.sln
+frontend/*.sw?
+
+# ===========================
+# Environment Variables
+# ===========================
+# IMPORTANTE: Nunca subir credenciales reales
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+bd/.env
+
+# Mantener archivos de ejemplo
+!.env.example
+!frontend/.env.example
+
+# ===========================
+# Docker
+# ===========================
+# Volúmenes y datos persistentes
+bd/data/
+bd/postgres_data/
+docker-compose.override.yml
+
+# ===========================
+# Database
+# ===========================
+*.sql.backup
+*.dump
+*.db
+*.sqlite
+*.sqlite3
+
+# ===========================
+# OS
+# ===========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ===========================
+# IDEs
+# ===========================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ===========================
+# Logs
+# ===========================
+*.log
+logs/
+*.log.*
+
+# ===========================
+# Temporary files
+# ===========================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ===========================
+# Package managers
+# ===========================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ===========================
+# Build artifacts
+# ===========================
+*.jar
+*.war
+*.ear
+*.class
+
+# ===========================
+# Security
+# ===========================
+# Nunca subir archivos con credenciales
+*secret*
+*password*
+*credentials*
+*.pem
+*.key
+*.cert
+*.crt
+
+# Excepciones (si necesitas subir algo específico)
+# !some-file-to-include.key

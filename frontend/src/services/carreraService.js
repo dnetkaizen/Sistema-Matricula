@@ -1,10 +1,10 @@
 import api from './api';
 
 export const carreraService = {
-  getAll: () => api.get('/carreras'),
-  getById: (id) => api.get(`/carreras/${id}`),
-  getByFacultad: (facultadId) => api.get(`/carreras/facultad/${facultadId}`),
-  create: (carrera) => api.post('/carreras', carrera),
-  update: (id, carrera) => api.put(`/carreras/${id}`, carrera),
-  delete: (id) => api.delete(`/carreras/${id}`),
+  getAll: () => api.get('/api/carreras'),
+  getById: (id) => api.get(`/api/carreras/${id}`),
+  getByFacultad: (facultadId) => api.get(`/api/carreras/facultad/${facultadId}`),
+  create: (carrera) => api.post('/api/carreras', carrera),
+  update: (id, carrera) => api.put(`/api/carreras/${id}`, carrera),
+  delete: (id) => api.delete(`/api/carreras/${id}`),
 };

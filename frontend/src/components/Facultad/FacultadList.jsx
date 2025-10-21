@@ -16,17 +16,18 @@ const FacultadList = () => {
 
   const loadFacultades = async () => {
     try {
-      console.log('🔄 CARGANDO FACULTADES REALES DE LA BD...');
+      console.log('🔄 Cargando facultades desde:', import.meta.env.VITE_API_URL || 'http://localhost:8082');
       setLoading(true);
       setError(null);
       
       const response = await facultadService.getAll();
-      console.log('✅ FACULTADES DE POSTGRESQL:', response.data);
+      console.log('✅ Facultades cargadas:', response.data);
       setFacultades(response.data);
       
     } catch (error) {
-      console.error('💥 ERROR:', error);
-      setError('No se puede conectar al backend: ' + error.message);
+      console.error('💥 Error cargando facultades:', error);
+      const message = error.response?.data?.message || `Error de conexión: ${error.message}. Verifica que el backend esté en puerto 8082.`;
+      setError(message);
       setFacultades([]);
     } finally {
       setLoading(false);
@@ -89,10 +90,10 @@ const FacultadList = () => {
         <div style={{ marginTop: '20px' }}>
           <h4>🔧 PARA SOLUCIONAR:</h4>
           <ol>
-            <li><strong>Verifica que Spring Boot esté corriendo</strong> en puerto 8080</li>
+            <li><strong>Verifica que Spring Boot esté corriendo</strong> en puerto 8082</li>
             <li><strong>Abre en el navegador:</strong> 
-              <a href="http://localhost:8080/api/facultades" target="_blank" style={{marginLeft: '10px'}}>
-                http://localhost:8080/api/facultades
+              <a href="http://localhost:8082/api/facultades" target="_blank" style={{marginLeft: '10px'}}>
+                http://localhost:8082/api/facultades
               </a>
             </li>
             <li><strong>Revisa la terminal del backend</strong> por errores</li>

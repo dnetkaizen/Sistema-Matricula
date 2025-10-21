@@ -22,24 +22,19 @@ const CarreraList = () => {
       setLoading(true);
       setError(null);
       
-      // FORZAR conexión al backend - SIN MOCKS
-      console.log('📡 Conectando a http://localhost:8080/api/facultades...');
       const facultadesRes = await facultadService.getAll();
       console.log('✅ FACULTADES DE LA BD:', facultadesRes.data);
       
-      console.log('📡 Conectando a http://localhost:8080/api/carreras...');
       const carrerasRes = await carreraService.getAll();
       console.log('✅ CARRERAS DE LA BD:', carrerasRes.data);
       
-      // SOLO usar datos del backend
       setFacultades(facultadesRes.data);
       setCarreras(carrerasRes.data);
       
     } catch (error) {
       console.error('💥 ERROR DE CONEXIÓN:', error);
-      setError('NO SE PUEDE CONECTAR AL BACKEND: ' + error.message);
-      
-      // NO usar mocks - dejar arrays vacíos
+      const message = error.response?.data?.message || 'NO SE PUEDE CONECTAR AL BACKEND: ' + error.message;
+      setError(message);
       setFacultades([]);
       setCarreras([]);
     } finally {
